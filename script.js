@@ -4,47 +4,49 @@ function getComputerChoice(){
     return computerRandomChoice;
 }
 
+
+var computerScore = 0;
+var playerScore = 0;
+
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
         if(playerSelection == "rock" && computerSelection == "rock") {
             return "Tie! Rock <=> Rock";
         } else if (playerSelection == "rock" && computerSelection == "paper"){
             computerScore++;
-            return "You Lose! Rock <=> Paper."
+            return "You Lose! Rock <=> Paper.";
             
         } else if (playerSelection == "rock" && computerSelection == "scissors"){
             playerScore++;
-            return "You Win! Rock <=> Scissors."
+            return "You Win! Rock <=> Scissors.";
 
         } else if (playerSelection == "paper" && computerSelection == "rock"){
             playerScore++;
-            return "You Win! Paper <=> Rock."
+            return "You Win! Paper <=> Rock.";
 
         } else if (playerSelection == "paper" && computerSelection == "paper"){
             return "Tie! Paper <=> Paper";
 
         } else if (playerSelection == "paper" && computerSelection == "scissors"){
             computerScore++;
-            return "You Lose! Paper <=> Scissors."
+            return "You Lose! Paper <=> Scissors.";
 
         } else if (playerSelection == "scissors" && computerSelection == "rock"){
             computerScore++;
-            return "You Lose! Scissors <=> Rock."
+            return "You Lose! Scissors <=> Rock.";
 
         } else if (playerSelection == "scissors" && computerSelection == "paper"){
             playerScore++;
-            return "You Win! Scissors <=> Paper."
+            return "You Win! Scissors <=> Paper.";
 
         } else if (playerSelection == "scissors" && computerSelection == "scissors"){
             return "Tie! Scissors <=> Scissors";
 
         } else {
-            return "Please enter correct option."
+            return "Please enter correct option.";
         }
 }
 
-var computerScore = 0;
-var playerScore = 0;
 
 function game(){
     for (var i = 0; i < 5; i++){
@@ -54,11 +56,11 @@ function game(){
     }
 
     if (computerScore > playerScore){
-        return "Computer Wins!"
+        console.log("Computer Wins!");
     } else if (playerScore > computerScore) {
-        return "Player Wins!"
+        console.log("Player Wins!");
     } else {
-        return "It's a Tie!"
+        console.log("It's a Tie!");
     }
 }
 
