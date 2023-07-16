@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="score-board">
+        <span id="user-score">0</span> : <span id="computer-score">0</span>
+        <div class="user-tag">You</div>
+        <div class="computer-tag">AI</div>
+    </div>
+    <div class="message">
+        <p>Can you save mankind by beating AI in the rock-paper-scissors game?</p>
+        <p>First to get five wins.</p>
+    </div>
+    <div class="choices">
+        <button class="choice" id="rock">
+            <div class="sign">✊</div>
+        </button>
+        <button class="choice" id="paper">
+            <div class="sign">✋</div>
+        </button>
+        <button class="choice" id="scissors">
+            <div class="sign">✌</div>
+        </button>
+    </div>
+    <div class="result">
+        <p>Let's play.</p>
+    </div>
     <script src="script.js"></script>
-    
 </body>
 </html>

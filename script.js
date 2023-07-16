@@ -1,3 +1,6 @@
+
+
+
 function getComputerChoice(){
     const computerChoice = ["rock", "paper", "scissors"];
     const computerRandomChoice = computerChoice[Math.floor(Math.random()*3)];
@@ -8,17 +11,33 @@ function getComputerChoice(){
 var computerScore = 0;
 var playerScore = 0;
 
+const playerScore_span = document.getElementById("user-score");
+const computerScore_span = document.getElementById("computer-score");
+const scoreBoard_div = document.querySelector(".score-board");
+const message_div = document.querySelector(".message");
+const rock_div = document.getElementById("rock");
+const paper_div = document.getElementById("paper");
+const scissors_div = document.getElementById("scissors");
+const result_div = document.querySelector(".result");
+
+
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
         if(playerSelection == "rock" && computerSelection == "rock") {
             return "Tie! Rock <=> Rock";
+            
+
         } else if (playerSelection == "rock" && computerSelection == "paper"){
-            computerScore++;
+           computerScore++;
             return "You Lose! Rock <=> Paper.";
+            
+
             
         } else if (playerSelection == "rock" && computerSelection == "scissors"){
             playerScore++;
             return "You Win! Rock <=> Scissors.";
+            
+
 
         } else if (playerSelection == "paper" && computerSelection == "rock"){
             playerScore++;
@@ -53,6 +72,9 @@ function game(){
         const playerSelection = prompt("What's your move?");
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
+        computerScore_span.textContent = computerScore;
+        playerScore_span.textContent = playerScore;
+
     }
 
     if (computerScore > playerScore){
@@ -68,3 +90,19 @@ function game(){
 }
 
 game();
+
+
+/* rock_div.addEventListener('click', function(){
+    playRound("rock",getComputerChoice());
+}
+)
+
+paper_div.addEventListener('click', function(){
+    playRound("paper",getComputerChoice());
+}
+)
+
+scissors_div.addEventListener('click', function(){
+    playRound("scissors",getComputerChoice());
+}
+) */
